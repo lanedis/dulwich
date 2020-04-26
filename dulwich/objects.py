@@ -153,7 +153,7 @@ def object_header(num_type: int, length: int) -> bytes:
             b' ' + str(length).encode('ascii') + b'\0')
 
 
-def serializable_property(name: str, docstring:Optional[str]=None):
+def serializable_property(name: str, docstring: Optional[str] = None):
     """A property that helps tracking whether serialization is necessary.
     """
     def set(obj, value):
@@ -254,8 +254,8 @@ class ShaFile(object):
 
     __slots__ = ('_chunked_text', '_sha', '_needs_serialization')
 
-    type_name:bytes
-    type_num:int
+    type_name: bytes
+    type_num: int
 
     @staticmethod
     def _parse_legacy_object_header(magic, f):
@@ -1421,7 +1421,7 @@ OBJECT_CLASSES = (
     Tag,
     )
 
-_TYPE_MAP:Dict[Union[bytes,int],Type[ShaFile]] = {}
+_TYPE_MAP: Dict[Union[bytes, int], Type[ShaFile]] = {}
 
 for cls in OBJECT_CLASSES:
     _TYPE_MAP[cls.type_name] = cls
