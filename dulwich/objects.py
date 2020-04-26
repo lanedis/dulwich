@@ -581,7 +581,7 @@ class Blob(ShaFile):
         self.set_raw_string(data)
 
     data = property(_get_data, _set_data,
-                    "The text contained within the blob object.")
+                    doc="The text contained within the blob object.")
 
     def _get_chunked(self):
         return self._chunked_text
@@ -597,7 +597,7 @@ class Blob(ShaFile):
 
     chunked = property(
         _get_chunked, _set_chunked,
-        "The text within the blob object, as chunks (not necessarily lines).")
+        doc="The text in the blob object, as chunks (not necessarily lines)")
 
     @classmethod
     def from_path(cls, path):
